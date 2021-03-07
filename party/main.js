@@ -1,15 +1,9 @@
 "use strict"
-
 const fs = require('fs')
 
-let input = fs.readFileSync('./input.txt', 'utf8')
-let data
-data=input
+let data = fs.readFileSync('./input.txt', 'utf8')
 
-
-data=data.split('\r').join('')
-data=data.split("\n")
-
+data=data.split('\r').join('').split("\n")
 
 let T=data[0]
 data.splice(0,1)
@@ -20,8 +14,7 @@ for(let i=0; i<T; i++){
     let s=0
     let l=[]
     l=data[(i*2)+1].split(' ')
-    l=l.filter(e => e>=0)
-    l.forEach(e => s+=parseInt(e))
+    l=l.filter(e => e>=0).forEach(e => s+=parseInt(e))
 
     let caso="Case #"
     caso+=(i+1)
