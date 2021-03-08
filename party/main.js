@@ -16,15 +16,8 @@ for(let i=0; i<T; i++){
     l=data[(i*2)+1].split(' ')
     l=l.filter(e => e>=0).forEach(e => s+=parseInt(e))
 
-    let caso="Case #"
-    caso+=(i+1)
-    caso+=(": ")
-    caso+=(s)
+    casi+=`Case #${i}: ${s}` + "\n"
 
-    casi+=caso
-    casi+='\n'
-
-    caso=""
     s=0
 }
 
